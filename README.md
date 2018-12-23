@@ -14,7 +14,7 @@
 
 ### Association
 - has_many :comments
-- has_many :items, through: :comments
+- has_many :items
 - has_many :purchases
 - has_one :address
 - has_one :birth
@@ -84,7 +84,6 @@
 ### Association
 - has_many :comments
 - belongs_to :user
-- has_many :users, through: :comments
 - has_one :parent_category
 - has_one :value
 - has_one :purchase
