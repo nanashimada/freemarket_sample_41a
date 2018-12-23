@@ -36,7 +36,7 @@
 |building|string|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 
@@ -50,7 +50,7 @@
 
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 
@@ -60,7 +60,7 @@
 |------|----|-------|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 
@@ -95,6 +95,7 @@
 |small_category_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :items
 - has_one :large_category
 - has_one :midium_category
 - has_one :small_category
@@ -107,7 +108,7 @@
 |category_name|string|null: false|
 
 ### Association
-- has_one :parent_category
+- belongs_to :parent_category
 
 
 ## midium_categoryテーブル
@@ -117,7 +118,7 @@
 |category_name|string|null: false|
 
 ### Association
-- has_one :parent_category
+- belongs_to :parent_category
 
 
 ## small_categoryテーブル
@@ -127,7 +128,7 @@
 |category_name|string|null: false|
 
 ### Association
-- has_one :parent_category
+- belongs_to :parent_category
 
 
 
@@ -140,4 +141,4 @@
 
 
 ### Association
-- has_one :item
+- belongs_to :item
