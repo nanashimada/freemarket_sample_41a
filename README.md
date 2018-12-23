@@ -25,7 +25,7 @@
 
 
 
-## addressテーブル
+## addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -36,11 +36,11 @@
 |building|string|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 
-## groupsテーブル
+## birthesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -50,17 +50,17 @@
 
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 
-## creditテーブル
+## creditsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 
@@ -86,7 +86,7 @@
 
 
 
-## parent_categoryテーブル
+## parent_categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -95,43 +95,44 @@
 |small_category_id|integer|null: false, foreign_key: true|
 
 ### Association
+- belongs_to :item
 - has_one :large_category
 - has_one :midium_category
 - has_one :small_category
 
 
-## large_categoryテーブル
+## large_categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null: false|
 
 ### Association
-- has_one :parent_category
+- belongs_to :parent_category
 
 
-## midium_categoryテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|category_name|string|null: false|
-
-### Association
-- has_one :parent_category
-
-
-## small_categoryテーブル
+## midium_categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |category_name|string|null: false|
 
 ### Association
-- has_one :parent_category
+- belongs_to :parent_category
+
+
+## small_categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|category_name|string|null: false|
+
+### Association
+- belongs_to :parent_category
 
 
 
-## valueテーブル
+## valuesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -140,4 +141,4 @@
 
 
 ### Association
-- has_one :item
+- belongs_to :item
