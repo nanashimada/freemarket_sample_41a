@@ -15,13 +15,14 @@
 ### Association
 - has_many :items
 - has_many :comments
+- has_many :purchases
 - has_one :address
 - has_one :birth
 - has_one :credit
 
 
 
-## addressテーブル
+## addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -37,7 +38,7 @@
 
 
 
-## birthテーブル
+## birthesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -52,11 +53,15 @@
 
 
 
-## creditテーブル
+## creditsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
+|card_number|integer|null: false|
+|expiration_year|integer|null: false|
+|expiration_month|integer|null: false|
+|security_code|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -81,7 +86,7 @@
 - belongs_to :user
 - has_one :parent_category
 - has_one :value
-
+- has_one :purchase
 
 
 
@@ -134,10 +139,11 @@
 
 
 
-## valueテーブル
+## valuesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
+|item_id|integer|null: false, foreign_key: true|
 |price|string|null: false|
 |profit|string|null: false|
 
@@ -155,6 +161,17 @@
 |item_id|integer|null: false, foreign_key: true|
 |comment|text|
 
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
