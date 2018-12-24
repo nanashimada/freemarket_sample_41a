@@ -1,14 +1,17 @@
-.header-wrapper
+.header
   .header-inner
-    .header-inner__upper
-      .header-inner__upper-logo
+    .header-inner__upper.clearfix
+      %h1.header-inner__upper-logo
         %a{href:"/"}
           %img{src: "assets/logo.svg", alt:"mer", width:"134", height:"36"}
-      %form.header-inner__upper-serch-form
-        .header-inner__upper-serch-form-icon
+      .header-inner__upper-search-form
+        %input{type:"search", placeholder:"キーワードから探す"}
+        -# = form_for  do |f|
+          = f.text_field :content, class: 'form-control', placeholder: 'キーワードから探す'
+        %i.fas.fa-search
 
 
-    .header-inner__lower
+    .header-inner__lower.clearfix
       %nav.header-inner__lower-nav
         %ul.header-inner__lower-left-content
           %li
@@ -25,13 +28,13 @@
             %a.header-inner__lower-right-content-user{href:"/"}
               %figure
                 %div
-                  %img{src: "assets/flag_jp.png"}
+                  %img{src: "assets/light-bulb.jpg", width:"32"}
               %div マイページ
           %li
             %a.header-inner__lower-right-content-notification{href:"/"}
-              %i.icon-bell
+              %i.far.fa-bell
               %span お知らせ
           %li
             %a.header-inner__lower-right-content-todo{href:"/"}
-              %i.icon-check
+              %i.fas.fa-check
               %span やることリスト
