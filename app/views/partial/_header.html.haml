@@ -1,0 +1,37 @@
+.header-wrapper
+  .header-inner
+    .header-inner__upper
+      .header-inner__upper-logo
+        %a{href:"/"}
+          %img{src: "assets/logo.svg", alt:"mer", width:"134", height:"36"}
+      %form.header-inner__upper-serch-form
+        .header-inner__upper-serch-form-icon
+
+
+    .header-inner__lower
+      %nav.header-inner__lower-nav
+        %ul.header-inner__lower-left-content
+          %li
+            %h2
+              %a.header-inner__lower-left-content-category{href:"/"} カテゴリーから探す
+          %li
+            %h2
+              %a.header-inner__lower-left-content-bland{href:"/"} ブランドから探す
+
+
+      .header-inner__lower-right-content
+        %ul.header-inner__lower-right-content-nav
+          %li
+            %a.header-inner__lower-right-content-user{href:"/"}
+              %figure
+                %div
+                  %img{src: "assets/flag_jp.png"}
+              %div マイページ
+          %li
+            %a.header-inner__lower-right-content-notification{href:"/"}
+              %i.icon-bell
+              %span お知らせ
+          %li
+            %a.header-inner__lower-right-content-todo{href:"/"}
+              %i.icon-check
+              %span やることリスト
