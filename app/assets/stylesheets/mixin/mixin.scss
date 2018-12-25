@@ -5,3 +5,9 @@
     clear: both;
   }
 }
+
+@mixin header_list{
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 16px;
+}
